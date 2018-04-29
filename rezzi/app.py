@@ -26,7 +26,7 @@ socketio = SocketIO(app, async_mode='eventlet')
 
 
 PROJECT_ID = 'rezzi-72934'
-SESSION_ID = 42
+SESSION_ID = 44
 SAMPLE_RATE = 44100
 LANGUAGE = 'en'
 AUDIO_OUTPUT_PATH = os.path.join(os.path.abspath('./static/audio'), 'out.wav')
@@ -76,7 +76,10 @@ def test_disconnect():
 
     query, params, fulfillment = detect_intent_audio(sample_rate=sample_rate)
     for p_k, p_v in params.items():
-        DATA[p_k] = p_v
+        if p_k in ["language", "jobs", "date-period"]:
+            DATA[p_k] = str(p_v)
+        else:
+            DATA[p_k] = [p_v]
 
     print("NEW DATA", DATA)
 
