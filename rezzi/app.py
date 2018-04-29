@@ -19,7 +19,7 @@ from google.cloud.speech import types
 from scipy.io import wavfile
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 CORS(app)
 app.config['SECRET_KEY'] = 'rezzi secrets'
 socketio = SocketIO(app, async_mode='eventlet')
@@ -29,8 +29,8 @@ PROJECT_ID = 'rezzi-72934'
 SESSION_ID = 42
 SAMPLE_RATE = 44100
 LANGUAGE = 'en'
-AUDIO_OUTPUT_PATH = os.path.join(os.path.abspath('./resources'), 'out.wav')
-AUDIO_RESPONSE_BASE = os.path.abspath('./resources')
+AUDIO_OUTPUT_PATH = os.path.join(os.path.abspath('./static/audio'), 'out.wav')
+AUDIO_RESPONSE_BASE = os.path.abspath('./static/audio')
 
 SESSION_CLIENT = dialogflow.SessionsClient()
 SESSION = SESSION_CLIENT.session_path(PROJECT_ID, SESSION_ID)
@@ -41,9 +41,9 @@ def index():
     return render_template('rezzi.html')
 
 
-@app.route('/resources/<path:path>')
+@app.route('/static/audio<path:path>')
 def send_mp3(path):
-    return send_from_directory('resources', path)
+    return send_from_directory('static', path)
 
 
 @socketio.on('connect')
