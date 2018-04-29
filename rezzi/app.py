@@ -35,6 +35,8 @@ AUDIO_RESPONSE_BASE = os.path.abspath('./static/audio')
 SESSION_CLIENT = dialogflow.SessionsClient()
 SESSION = SESSION_CLIENT.session_path(PROJECT_ID, SESSION_ID)
 
+DATA = {}
+
 
 @app.route('/')
 def index():
@@ -73,7 +75,12 @@ def test_disconnect():
     wavfile.write(AUDIO_OUTPUT_PATH, sample_rate, newdata)
 
     # session['transcripts'] = speech_to_text(sample_rate)
-    query, fulfillment = detect_intent_audio(sample_rate=sample_rate)
+    query, params, fulfillment = detect_intent_audio(sample_rate=sample_rate)
+    for p_k, p_v in params.items():
+        DATA[p_k] = p_v
+
+    print("NEW DATA", DATA)
+
     filename = synthesize_text(fulfillment)
     emit('my_response', {'data': f"/audio/{filename}", 'query': query,
                          'answer': fulfillment})
@@ -136,7 +143,8 @@ def detect_intent_audio(project_id=PROJECT_ID, session_id=SESSION_ID,
     print('Fulfillment text: {}\n'.format(
         response.query_result.fulfillment_text))
 
-    return response.query_result.query_text, response.query_result.fulfillment_text
+    return (response.query_result.query_text, response.query_result.parameters,
+            response.query_result.fulfillment_text)
 
 
 def detect_intent_texts(project_id=PROJECT_ID, session_id=SESSION_ID,

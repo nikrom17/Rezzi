@@ -1,5 +1,8 @@
 <div>
-	<ul>
-		<li ng-repeat="t in transcript">{{t }}</li>
-	</ul>
+	<div class="talk-bubble round" ng-repeat="t in transcript">
+		<div class="talktext" ng-class-even="'tri-right left-top'"
+			ng-class-odd="'tri-left right-top'">
+			<p>{{t}}</p>
+		</div>
+	</div>
 </div>
