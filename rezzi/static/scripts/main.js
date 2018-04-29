@@ -6,19 +6,19 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
   var homeState = {
     name: 'home',
     url: '/home',
-    templateUrl: './templates/home.html'
+    templateUrl: './views/home.html'
   }
   
   var resumeState = {
     name: 'resume',
     url: '/resume',
-    templateUrl: './templates/resume.html'
+    templateUrl: './views/resume.html'
   }
   
   var chatState = {
     name: 'chat',
     url: '/chat',
-    templateUrl: './templates/chat.html'
+    templateUrl: './views/chat.html'
   }
 
   $stateProvider

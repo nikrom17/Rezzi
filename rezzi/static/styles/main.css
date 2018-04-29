@@ -219,5 +219,7 @@ _:-ms-input-placeholder, :root .demo-graph {
   background-color: #032296;
   color: white;
   position: fixed;
-  bottom: 20px;  
+  bottom: 20px;
+  left: 0;
+  right: 0;  
 }
