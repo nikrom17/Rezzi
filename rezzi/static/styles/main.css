@@ -15,7 +15,7 @@
  */
 
 html, body {
-  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .demo-avatar {
   width: 48px;
@@ -222,4 +222,24 @@ _:-ms-input-placeholder, :root .demo-graph {
   bottom: 20px;
   left: 0;
   right: 0;  
+}
+.slogan {
+  font-weight: 300;
+}
+
+ui-view
+{
+  width: 100%;
+  overflow: hidden;
+}
+
+ui-view > div
+{
+    height: calc(100% - 90px);
+    text-align: center;
+}
+
+ui-view > div h1
+{
+  margin: 0;
 }
