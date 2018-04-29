@@ -1,6 +1,8 @@
 var myApp = angular.module('helloworld', ['ui.router']);
 
-myApp.config(function($stateProvider) {
+myApp.config(function($stateProvider, $urlRouterProvider) {
+
+  $urlRouterProvider.otherwise("/home");
   var homeState = {
     name: 'home',
     url: '/home',
@@ -19,7 +21,8 @@ myApp.config(function($stateProvider) {
     templateUrl: './templates/chat.html'
   }
 
-  $stateProvider.state(homeState);
-  $stateProvider.state(resumeState);
-  $stateProvider.state(chatState);
+  $stateProvider
+    .state(homeState)
+    .state(resumeState)
+    .state(chatState);
 });
