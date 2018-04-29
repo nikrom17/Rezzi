@@ -74,7 +74,6 @@ def test_disconnect():
     newdata = scaled.astype(np.int16)
     wavfile.write(AUDIO_OUTPUT_PATH, sample_rate, newdata)
 
-    # session['transcripts'] = speech_to_text(sample_rate)
     query, params, fulfillment = detect_intent_audio(sample_rate=sample_rate)
     for p_k, p_v in params.items():
         DATA[p_k] = p_v
