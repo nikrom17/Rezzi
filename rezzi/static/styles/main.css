@@ -232,7 +232,17 @@ _:-ms-input-placeholder, :root .demo-graph {
   background-color: rgba(0,0,0,.12);
   color: rgba(0,0,0,.26);
 }
-   
+
+.mdl-layout__header-row
+{
+  background-color: #3e7ce3;
+}
+  
+.darcel {
+    width:50; /* you can use % */
+    height: auto;
+    margin: 0 0 0 -60px;
+}
 
 ui-view
 {
