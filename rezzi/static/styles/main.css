@@ -223,3 +223,20 @@ _:-ms-input-placeholder, :root .demo-graph {
   left: 0;
   right: 0;  
 }
+
+ui-view
+{
+  width: 100%;
+  overflow: hidden;
+}
+
+ui-view > div
+{
+    height: calc(100% - 90px);
+    text-align: center;
+}
+
+ui-view > div h1
+{
+  margin: 0;
+}
