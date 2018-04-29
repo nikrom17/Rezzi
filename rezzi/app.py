@@ -76,7 +76,7 @@ def test_disconnect():
     # session['transcripts'] = speech_to_text(sample_rate)
     query, fulfillment = detect_intent_audio(sample_rate=sample_rate)
     filename = synthesize_text(fulfillment)
-    emit('my_response', {'data': f"/resources/{filename}"})
+    emit('my_response', {'data': f"/audio/{filename}"})
     session['query'] = query
     session['fulfillment'] = fulfillment
     session['audio'] = []
