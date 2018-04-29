@@ -214,7 +214,7 @@ _:-ms-input-placeholder, :root .demo-graph {
           align-items: center;
 }
 
-.mdl-button--fab.mdl-button--colored.voice-color
+.voice-color .mdl-button--fab.mdl-button--colored
 {
   background-color: #032296;
   color: white;
@@ -223,6 +223,13 @@ _:-ms-input-placeholder, :root .demo-graph {
   left: 0;
   right: 0;  
 }
+
+.voice-color .mdl-button--fab.mdl-button--colored[disabled]
+{
+  background-color: rgba(0,0,0,.12);
+  color: rgba(0,0,0,.26);
+}
+   
 
 ui-view
 {
