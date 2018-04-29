@@ -236,6 +236,12 @@ _:-ms-input-placeholder, :root .demo-graph {
 .mdl-layout__header-row
 {
   background-color: #3e7ce3;
+  color: rgba(255,255,255,.8);
+;
+}
+
+.mdl-layout-title {
+  margin: 0 0 0 90px;
 }
   
 .darcel {
@@ -248,6 +254,10 @@ ui-view
 {
   width: 100%;
   overflow: hidden;
+}
+
+.voice-color .mdl-button--fab.mdl-button--colored {
+  background-color: #3e7ce3;
 }
 
 ui-view > div
@@ -422,6 +432,16 @@ ui-view > div h1
 	border-color: transparent transparent transparent lightyellow;
 
 /*Right triangle, placed bottom right side slightly in*/
+
+.bubble-left {
+	/* background-color: rgba(54, 110, 239,.1); */
+}
+
+.bubble-right {
+	/* background-color: white; */
+	/* border-color: lightyellow lightyellow transparent transparent; */
+}
+
 .tri-right.border.btm-right:before {
 	content: ' ';
 	position: absolute;
@@ -512,4 +532,11 @@ ui-view > div h1
 .processing h2, .chat-title h1
 {
   color: #3e7ce3;
+}
+
+.bubble-right
+{
+    background-color: #3e7ce3;
+    border-radius: 15px;
+    color: white;
 }

@@ -19,9 +19,9 @@ myApp.controller('chatCtrl', ['$http','$scope',function($http,$scope) {
         });
 
         $scope.socket.on('my_response', function (msg) {
-            console.log(msg);
-            $scope.proccess = 0;
+            console.log(msg);            
         		$scope.$apply(function() {
+              $scope.proccess = 0;
         			$scope.transcript = [msg.query, msg.answer];
               $scope.hasData = 1;
         		});
