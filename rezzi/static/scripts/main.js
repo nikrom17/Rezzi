@@ -7,26 +7,32 @@ myApp.controller('chatCtrl', ['$http','$scope',function($http,$scope) {
 
     $scope.record = function($event){
       $event.preventDefault();
-      /*console.log("recording...");
-      if($scope.socket == null){
-        $scope.socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
-        $scope.socket.on('connect', function() {
+      if(socket == null){
+        socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+        socket.on('connect', function() {
             navigator.getUserMedia({audio: true}, initializeRecorder, function(a, b, c){
               console.log(a, b, c);
             });
         });
+
+        socket.on('my_response', function (msg) {
+            console.log(msg);
+            var audioPlay = new Audio(msg.data);
+            audioPlay.play();
+        });
       }
       else {
-        $scope.socket.disconnect();
-        $scope.socket.connect();
-      }*/
+        socket.disconnect();
+        socket.connect();
+      }
       $event.currentTarget.querySelector("button").disabled = true;
-      /*$('#connect input')[0].disabled = true;
-      $('#disconnect input')[0].disabled = false;*/
     }
 
     $scope.stopRecord = function($event){
       $event.preventDefault();
+       mediaStream.getAudioTracks()[0].stop();
+          audio_context.close();
+          socket.emit('disconnect_request');
       $event.currentTarget.querySelector("button").disabled = false;
     }
 }]);
