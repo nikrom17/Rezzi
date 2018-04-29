@@ -1,7 +1,9 @@
-<div>
+<div id="home">
+	<img ng-hide="transcript.length != 0" class="chat-bubble" src="img/chat-bubble-speech.png" alt="logo">
+
 	<div class="talk-bubble round" ng-repeat="t in transcript">
-		<div class="talktext" ng-class-even="'tri-right left-top'"
-			ng-class-odd="'tri-left right-top'">
+		<div class="talktext" ng-class-even="'tri-right left-top bubble-left'"
+			ng-class-odd="'tri-left right-top bubble-right'">
 			<p>{{t}}</p>
 		</div>
 	</div>

@@ -422,6 +422,16 @@ ui-view > div h1
 	border-color: transparent transparent transparent lightyellow;
 
 /*Right triangle, placed bottom right side slightly in*/
+
+.bubble-left {
+	/* background-color: rgba(54, 110, 239,.1); */
+}
+
+.bubble-right {
+	/* background-color: white; */
+	/* border-color: lightyellow lightyellow transparent transparent; */
+}
+
 .tri-right.border.btm-right:before {
 	content: ' ';
 	position: absolute;
