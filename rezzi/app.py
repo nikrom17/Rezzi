@@ -49,7 +49,6 @@ def send_mp3(path):
 @socketio.on('connect')
 def connect():
     session['audio'] = []
-    session['transcript'] = []
 
 
 @socketio.on('sample_rate')
@@ -76,9 +75,8 @@ def test_disconnect():
     # session['transcripts'] = speech_to_text(sample_rate)
     query, fulfillment = detect_intent_audio(sample_rate=sample_rate)
     filename = synthesize_text(fulfillment)
-    emit('my_response', {'data': f"/audio/{filename}"})
-    session['query'] = query
-    session['fulfillment'] = fulfillment
+    emit('my_response', {'data': f"/audio/{filename}", 'query': query,
+                         'answer': fulfillment})
     session['audio'] = []
     disconnect()
 

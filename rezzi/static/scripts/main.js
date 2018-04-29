@@ -4,6 +4,8 @@ myApp.controller('chatCtrl', ['$http','$scope',function($http,$scope) {
 
     // get data from flask
     $scope.socket = null;
+    
+    $scope.transcript = [];
 
     $scope.record = function($event){
       $event.preventDefault();
@@ -17,6 +19,10 @@ myApp.controller('chatCtrl', ['$http','$scope',function($http,$scope) {
 
         $scope.socket.on('my_response', function (msg) {
             console.log(msg);
+		$scope.$apply(function() {
+			$scope.transcript.push(msg.query);
+	    		$scope.transcript.push(msg.answer);
+		});
             var audioPlay = new Audio(msg.data);
             audioPlay.play();
         });
