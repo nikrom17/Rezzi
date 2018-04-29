@@ -4,7 +4,8 @@ myApp.controller('chatCtrl', ['$http','$scope',function($http,$scope) {
 
     // get data from flask
     $scope.socket = null;
-    
+    $scope.hasData = 0;
+    $scope.proccess = 0;
     $scope.transcript = [];
 
     $scope.record = function($event){
@@ -19,9 +20,11 @@ myApp.controller('chatCtrl', ['$http','$scope',function($http,$scope) {
 
         $scope.socket.on('my_response', function (msg) {
             console.log(msg);
-		$scope.$apply(function() {
-			$scope.transcript = [msg.query, msg.answer];
-		});
+            $scope.proccess = 0;
+        		$scope.$apply(function() {
+        			$scope.transcript = [msg.query, msg.answer];
+              $scope.hasData = 1;
+        		});
             var audioPlay = new Audio(msg.data);
             audioPlay.play();
         });
@@ -35,10 +38,13 @@ myApp.controller('chatCtrl', ['$http','$scope',function($http,$scope) {
 
     $scope.stopRecord = function($event){
       $event.preventDefault();
+      $scope.proccess = 1;
+        console.log("Proccesing data...");
        mediaStream.getAudioTracks()[0].stop();
           audio_context.close();
           $scope.socket.emit('disconnect_request');
       $event.currentTarget.querySelector("button").disabled = false;
+
     }
 
 

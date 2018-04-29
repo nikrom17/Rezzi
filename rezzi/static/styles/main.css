@@ -508,3 +508,8 @@ ui-view > div h1
   -webkit-margin-before: 0em;
   -webkit-margin-after: 0em;
 }
+
+.processing h2, .chat-title h1
+{
+  color: #3e7ce3;
+}
