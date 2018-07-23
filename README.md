@@ -1,14 +1,14 @@
 # Rezzi - Your Personal Resume Assistant 
 
-My team and I built a 100% voice-driven resume builder to tackle literacy challenges at the 2018  [AngelHack](https://angelhack.com/)  Silicon Valley Hackathon. We wanted to build something that helped underserved communities like the homeless. AngelHack proposed two challenges that we wanted to try to tackle in the 24-hour period: build tech to solve homelessness and make a social impact.
+My team and I built a 100% voice-driven resume builder to tackle literacy challenges at the 2018  [AngelHack](https://angelhack.com/)  Silicon Valley Hackathon. AngelHack proposed two challenges that we wanted to try to tackle in the 24-hour period: build tech to solve homelessness and make a social impact.
 
 ### Our solution
 
-We built Rezzi, an interactive resume assistant. It'll ask you questions relevant for a job search and resume, listen to your answers, and record the important bits.
+We built Rezzi, an interactive resume assistant. It'll ask you questions relevant for a job search and resume, listen to your answers, then generate a resume to send to local homless job assistance workshops.
 
-![test](https://raw.githubusercontent.com/nikrom17/Rezzi/master/rezzi/static/img/rezzi_screenshot.png)
+![test](https://raw.githubusercontent.com/nikrom17/Rezzi/master/rezzi/static/img/rezzi_screenshot.png =305x)
 
-How?
+The PWA works by:
 
 1.  Get user voice as audio file
 2.  Analyze language
@@ -16,7 +16,7 @@ How?
 4.  Repeat 1-3 till end, gathering data
 5.  Build a resume
 
-We leveraged the web browser and its wide support for IO. Using Flask and SocketIO we were able to record audio from the microphone to create an audio sample. The users audio input was sent to the Dialogflow API for NLP and NLU analysis. The relevant entities such as job titles, names, and languages are stored in a local database while the chatbot's text response is used for further interaction.
+The users audio input was sent to the Dialogflow API for NLP and NLU analysis. The relevant entities such as job titles, names, and languages are stored in a local database while the chatbot's text response is used for further interaction.
 
 For our case, the user will be asked questions such as:
 1. "What's your name?"
@@ -37,3 +37,10 @@ Q: "When did you work at SuperMart?"
 
 We won the  [Code For A Cause](http://codeforacause.co/)  Impact Award Challenge: "Build technology that solves a social or environmental problem and positively impacts your local community."
 
+##  Using Rezzi
+
+1. `git clone https://github.com/nikrom17/Rezzi.git rezzi`
+2. `cd rezzi/rezzi`
+3. `python3 app.py`
+4. This will launch the server. Navigate to `http://127.0.0.1:5000`
+5. Click on the microphone icon at the bottom and say hello. Then Rezzi will start asking questions.
