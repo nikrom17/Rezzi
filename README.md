@@ -6,7 +6,7 @@ My team and I built a 100% voice-driven resume builder to tackle literacy challe
 
 We built Rezzi, an interactive resume assistant. It'll ask you questions relevant for a job search and resume, listen to your answers, then generate a resume to send to local homless job assistance workshops.
 
-![test](https://raw.githubusercontent.com/nikrom17/Rezzi/master/rezzi/static/img/rezzi_screenshot.png =305x)
+<img src="https://raw.githubusercontent.com/nikrom17/Rezzi/master/rezzi/static/img/rezzi_screenshot.png" align="middle" alt="rezzi" width="350px"/>
 
 The PWA works by:
 
@@ -43,4 +43,4 @@ We won the  [Code For A Cause](http://codeforacause.co/)  Impact Award Challenge
 2. `cd rezzi/rezzi`
 3. `python3 app.py`
 4. This will launch the server. Navigate to `http://127.0.0.1:5000`
-5. Click on the microphone icon at the bottom and say hello. Then Rezzi will start asking questions.
+5. Click on the microphone icon at the bottom and say "hello". Then Rezzi will start asking questions.
