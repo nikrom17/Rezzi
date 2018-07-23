@@ -6,7 +6,9 @@ My team and I built a 100% voice-driven resume builder to tackle literacy challe
 
 We built Rezzi, an interactive resume assistant. It'll ask you questions relevant for a job search and resume, listen to your answers, then generate a resume to send to local homless job assistance workshops.
 
-<img src="https://raw.githubusercontent.com/nikrom17/Rezzi/master/rezzi/static/img/rezzi_screenshot.png" align="middle" alt="rezzi" width="350px"/>
+<p align="center">
+	<img src="https://raw.githubusercontent.com/nikrom17/Rezzi/master/rezzi/static/img/rezzi_screenshot.png" align="middle" alt="rezzi" width="350px"/>
+</p>
 
 The PWA works by:
 
