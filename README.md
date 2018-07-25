@@ -2,6 +2,10 @@
 
 My team and I built a 100% voice-driven resume builder to tackle literacy challenges at the 2018  [AngelHack](https://angelhack.com/)  Silicon Valley Hackathon. AngelHack proposed two challenges that we wanted to try to tackle in the 24-hour period: build tech to solve homelessness and make a social impact.
 
+## Awards
+
+We won the  [Code For A Cause](http://codeforacause.co/)  Impact Award Challenge: "Build technology that solves a social or environmental problem and positively impacts your local community."
+
 ### Our solution
 
 We built Rezzi, an interactive resume assistant. It'll ask you questions relevant for a job search and resume, listen to your answers, then generate a resume to send to local homless job assistance workshops.
@@ -29,15 +33,11 @@ For our case, the user will be asked questions such as:
 
 The benefit of NLU is that we can build a rich context and provide better feedback to the user. Instead of responding with a static script we can make the chatbots responses more dynamic:
 
-Q: "What was your last job title?"
-A: "I was a cashier"
-Q: "Where did you work as a cashier?"
-A: "At SuperMart"
+Q: "What was your last job title?" <br>
+A: "I was a cashier"<br>
+Q: "Where did you work as a cashier?"<br>
+A: "At SuperMart"<br>
 Q: "When did you work at SuperMart?"
-
-## Awards
-
-We won the  [Code For A Cause](http://codeforacause.co/)  Impact Award Challenge: "Build technology that solves a social or environmental problem and positively impacts your local community."
 
 ##  Using Rezzi
 
