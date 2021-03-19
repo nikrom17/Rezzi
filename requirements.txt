@@ -17,7 +17,7 @@ greenlet==0.4.13
 grpcio==1.11.0
 idna==2.6
 itsdangerous==0.24
-Jinja2==2.7.3
+Jinja2==2.11.3
 MarkupSafe==0.23
 numpy==1.14.3
 protobuf==3.5.2.post1
